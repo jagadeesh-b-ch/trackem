@@ -1,0 +1,15 @@
+{
+  "name": "trackem",
+  "version": "0.0.1",
+  "description": "Keep track of your loved ones",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jagadeesh Babu Chitta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.21"
+  }
+}
