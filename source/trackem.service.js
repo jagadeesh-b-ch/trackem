@@ -1,12 +1,13 @@
 (function(){
 
+  var express = require('express')();
+  var bl = require('./trackem.bl');
+
   module.exports  = {
     initiateServices : function(){
-      var express = require('express')();
-      var bl = require('./trackem.bl');
 
       express.get('/trackem/loadProfile', function(req, res){
-        res.send(bl.sayHello());
+        res.send(bl.loadProfile());
       });
 
       express.get('/trackem/loadContacts', function(req, res){
