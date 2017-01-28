@@ -2,9 +2,19 @@
 
   var express = require('express')();
   var bl = require('./trackem.bl');
+  var constants = require('./trackem.constants');
 
   module.exports  = {
     initiateServices : function(){
+
+      express.get(constants.onBoardingService, function(req, res){
+        var result = bl.onBoard();
+        if(result){
+          res.send('Profile has been successfully created.')
+        }else{
+          res.send('Profile has not been successfully created.')
+        }
+      });
 
       express.get('/trackem/loadProfile', function(req, res){
         res.send(bl.loadProfile());

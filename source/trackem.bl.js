@@ -4,9 +4,8 @@
 
   module.exports = {
 
-    loadProfile : function(){
-      dao.loadProfile();
-      return 'Connection successful';
+    onBoard : function(){
+      return dao.onBoard();
     },
 
     sayHello: function(){
