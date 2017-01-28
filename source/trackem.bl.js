@@ -4,8 +4,8 @@
 
   module.exports = {
 
-    onBoard : function(){
-      return dao.onBoard();
+    onBoard : function(guestProfile){
+      return dao.onBoard(guestProfile);
     },
 
     sayHello: function(){

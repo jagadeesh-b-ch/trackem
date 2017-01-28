@@ -3,14 +3,22 @@
   var express = require('express')();
   var bl = require('./trackem.bl');
   var constants = require('./trackem.constants');
+  var response = require('./response.dto');
 
   module.exports  = {
     initiateServices : function(){
 
       express.get(constants.onBoardingService, function(req, res){
-        var result = bl.onBoard();
+        var profile = {
+          name : 'Jaggu',
+          mobile : '8939323189'
+        };
+        var result = bl.onBoard(profile);
         if(result){
-          res.send('Profile has been successfully created.')
+          var serviceResp = new response.response();
+          serviceResp.respCode = 0;
+          serviceResp.respDesc = 'Profile has been successfully created.';
+          res.send(serviceResp)
         }else{
           res.send('Profile has not been successfully created.')
         }
