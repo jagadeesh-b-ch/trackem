@@ -1,9 +1,13 @@
 (function(){
+
+    function response(){
+        var respCode;
+        var respDesc;
+        var respData;
+    }
+
     module.exports = {
-        response : function(){
-            var respCode;
-            var respDesc;
-            var response;
-        }
+        response : response
     };
+    
 })();

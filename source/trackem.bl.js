@@ -2,14 +2,16 @@
 
   var dao = require('./trackem.dao');
 
+  function onBoard(guestProfile){
+    return dao.onBoard(guestProfile);
+  }
+
+  function sayHello(){
+    return 'Hello';
+  }
+
   module.exports = {
-
-    onBoard : function(guestProfile){
-      return dao.onBoard(guestProfile);
-    },
-
-    sayHello: function(){
-      return 'Hello';
-    }
+    onBoard : onBoard,
+    sayHello: sayHello
   };
 })();

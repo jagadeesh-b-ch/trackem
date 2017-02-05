@@ -5,10 +5,8 @@
   var constants = require('./trackem.constants');
   var response = require('./response.dto');
 
-  module.exports  = {
-    initiateServices : function(){
-
-      express.get(constants.onBoardingService, function(req, res){
+  function initiateServices(){
+    express.get(constants.onBoardingService, function(req, res){
         var profile = {
           name : 'Jaggu',
           mobile : '8939323189'
@@ -39,8 +37,10 @@
       express.listen(3000, function(){
         console.log('Application listening on port 3000');
       });
-    }
+  }
 
+  module.exports  = {
+    initiateServices : initiateServices
   };
 
 })();

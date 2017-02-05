@@ -5,9 +5,8 @@
   // Connection URL
   var url = 'mongodb://localhost:27017/trackemdata';
 
-  module.exports = {
-    onBoard : function(guestProfile){
-      // Use connect method to connect to the server
+  function onBoard(guestProfile){
+    // Use connect method to connect to the server
       MongoClient.connect(url, function(err, db) {
         console.log("Connected successfully to db server");
         // Get the documents collection
@@ -25,6 +24,9 @@
           
         });
       });
-    }
+  }
+
+  module.exports = {
+    onBoard : onBoard
   };
 })();
